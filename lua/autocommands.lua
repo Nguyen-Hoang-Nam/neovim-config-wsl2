@@ -40,6 +40,10 @@ augroup([[autocmd!]])
 augroup([[autocmd BufWritePre * undojoin | Neoformat]])
 augroup([[augroup END]])
 
+augroup([[augroup Vertical]])
+augroup([[autocmd! BufEnter * if &ft ==# 'help' | wincmd L | endif]])
+augroup([[augroup END]])
+
 --augroup([[augroup Gitlen]])
 --augroup([[autocmd!]])
 --augroup([[autocmd CursorHold * lua require('gitlen.lua').blameVirtText()]])
