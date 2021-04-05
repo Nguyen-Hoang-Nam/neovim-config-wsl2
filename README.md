@@ -1,6 +1,6 @@
 # Neovim Config for WSL2 🎵
 
-🍕 Inspiring from siduck76/neovim-dots but wsl2
+🍕 Inspiring from [siduck76/neovim-dots](https://github.com/siduck76/neovim-dots) but wsl2
 
 ![Main](./images/screenshot1.png)
 
@@ -18,6 +18,7 @@
 - Show nvim-tree in right
 - Use theme moonfly
 - Hide close icon in buffer line
+- Install plugin manually
 
 ## 🗺 Mappings
 
@@ -44,6 +45,10 @@
 - Javascript: prettier
 - Markdown: prettier
 
+## 🍔 Plugins
+
+![Plugin list](./images/screenshot8.png)
+
 ## 📷 Screenshot
 
 #### Golang
@@ -57,3 +62,25 @@
 #### Javscript
 
 ![Javascript project](./images/screenshot4.png)
+
+#### Dashboard
+
+![Dashboard](./images/screenshot5.png)
+
+#### Telescope
+
+![Telescope](./images/screenshot6.png)
+
+#### Gitmoji
+
+![Gitmoji](./images/screenshot7.png)
+
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)

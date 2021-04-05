@@ -20,6 +20,7 @@ augroup([[autocmd VimEnter * hi SignColumn guibg=NONE guifg=NONE]])
 augroup([[autocmd VimEnter * hi VertSplit guibg=NONE]])
 augroup([[autocmd VimEnter * hi GitLens guifg=#949494 gui=italic]])
 augroup([[autocmd VimEnter * hi Whitespace guifg=#949494]])
+augroup([[autocmd VimEnter * hi StatusLineNC gui=underline guibg=NONE guifg=#3e4451]])
 augroup([[augroup END]])
 
 augroup([[augroup Terminal]])
