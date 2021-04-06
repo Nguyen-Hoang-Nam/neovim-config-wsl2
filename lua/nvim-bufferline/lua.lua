@@ -70,6 +70,19 @@ bufferline.setup {
 			guifg = '#ff5454',
 			guibg = '#3A3E44'
 		},
+		warning = {
+			guifg = '#e4c88b',
+			guibg = '#3A3E44',
+			gui = 'underline'
+		},
+		warning_selected = {
+			guifg = '#E4C88B',
+			guibg = '#3A3E44'
+		},
+		warning_visible = {
+			guifg = '#E4C88B',
+			guibg = '#282C34'
+		},
 		modified = {
 			guifg = '#85dc85',
 			guibg = '#282C34'
