@@ -1,4 +1,5 @@
 local lspconfig = require('lspconfig')
+local config = require('lspconfig/configs')
 
 vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.lsp.omnifunc")
 
@@ -18,6 +19,21 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 lspconfig.html.setup {
 	capabilities = capabilities,
+}
+
+config.emmet_ls = {
+	default_config = {
+		cmd = {'emmet-ls', '--stdio'},
+		filetypes = {'html', 'css'},
+		root_dir = function() 
+			return vim.loop.cwd()
+		end,
+		setting = {}
+	}
+}
+
+lspconfig.emmet_ls.setup {
+	on_attach = on_attach
 }
 
 lspconfig.gopls.setup {
