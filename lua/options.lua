@@ -23,6 +23,8 @@ opt('w', 'cursorline', true)
 opt('w', 'signcolumn', 'yes')
 opt('w', 'list', true)
 opt('w', 'listchars', 'tab:▏\\ ,trail:-,eol:↵')
+opt('w', 'foldmethod', 'expr')
+opt('w', 'foldexpr', 'nvim_treesitter#foldexpr()')
 
 -- Local to buffer
 opt('b', 'shiftwidth', 2)
