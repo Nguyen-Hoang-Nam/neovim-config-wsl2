@@ -16,6 +16,7 @@ require('nvim-autopairs').setup()
 require('neoformat.lua')
 require('clipboard')
 require('dashboard-nvim.lua')
+require('toggleterm.lua')
 
 local cmd = vim.cmd
 local g = vim.g

@@ -44,9 +44,6 @@ vim.g.NERDCreateDefaultMappings = 0
 map('n', '<Leader>/', [[<Cmd>call NERDComment(0,"toggle")<CR>]], cmd_options)
 map('v', '<Leader>/', [[:call NERDComment(1,"toggle")<CR>]], cmd_options)
 
-map('n', '<M-t>', [[<Cmd>FloatermToggle<CR>]], cmd_options)
-map('t', '<M-t>', [[<C-\><C-n>:FloatermToggle<CR>]], cmd_options)
-
 map('n', '<Leader>b', [[<Cmd>NvimTreeToggle<CR>]], cmd_options)
 map('v', '<Leader>b', [[<Cmd>NvimTreeToggle<CR>]], cmd_options)
 
