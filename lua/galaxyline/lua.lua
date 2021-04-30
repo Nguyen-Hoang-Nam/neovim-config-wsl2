@@ -21,6 +21,14 @@ local colors = {
 	greenYel = "#EBCB8B"
 }
 
+local checkwidth = function()
+	local squeeze_width = vim.fn.winwidth(0) / 2
+	if squeeze_width > 40 then
+		return true
+	end
+	return false
+end
+
 gls.left[1] = {
 	leftRounded = {
 		provider = function()
@@ -66,14 +74,6 @@ gls.left[5] = {
 		highlight = {colors.lightbg, 'NONE'}
 	}
 }
-
-local checkwidth = function()
-	local squeeze_width = vim.fn.winwidth(0) / 2
-	if squeeze_width > 40 then
-		return true
-	end
-	return false
-end
 
 gls.left[6] = {
 	DiffAdd = {
@@ -138,12 +138,20 @@ gls.left[12] = {
 	}
 }
 
+local checkGit = function()
+	local gitFolder = require("galaxyline.provider_vcs").check_git_workspace
+	if (gitFolder and checkwidth()) then
+		return true
+	end
+	return false
+end
+
 gls.right[1] = {
 	GitIcon = {
 		provider = function()
 			return "   "
 		end,
-		condition = require("galaxyline.provider_vcs").check_git_workspace,
+		condition = checkGit,
 		highlight = {colors.green, 'NONE'}
 	}
 }
@@ -151,7 +159,7 @@ gls.right[1] = {
 gls.right[2] = {
 	GitBranch = {
 		provider = "GitBranch",
-		condition = require("galaxyline.provider_vcs").check_git_workspace,
+		condition = checkGit,
 		highlight = {colors.green, 'NONE'}
 	}
 }
@@ -161,6 +169,7 @@ gls.right[3] = {
 		provider = function()
 			return ""
 		end,
+		condition = checkwidth,
 		separator = " ",
 		separator_highlight = {colors.bg, 'NONE'},
 		highlight = {colors.red, 'NONE'}
@@ -181,6 +190,7 @@ gls.right[4] = {
 			}
 			return alias[vim.fn.mode()]
 		end,
+		condition = checkwidth,
 		highlight = {colors.bg, colors.red}
 	}
 }
@@ -189,6 +199,7 @@ gls.right[5] = {
 	PerCent = {
 		provider = "LinePercent",
 		separator = " ",
+		condition = checkwidth,
 		separator_highlight = {colors.red, colors.red},
 		highlight = {colors.bg, colors.fg}
 	}
@@ -199,6 +210,7 @@ gls.right[6] = {
 		provider = function()
 			return ""
 		end,
+		condition = checkwidth,
 		highlight = {colors.fg, 'NONE'}
 	}
 }
